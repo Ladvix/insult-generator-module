@@ -1,10 +1,10 @@
 import requests
 import importlib
 from pyrogram import Client, filters
+from . import insult_generator
 
 
 def launch(bot, module_name):
-    insult_generator = importlib.import_module(f'userbot.modules.{module_name}.insult_generator')
 
     @bot.app.on_message(filters.command('generate_insult', prefixes='.') & filters.me)
     def generate_insult(client, message):
